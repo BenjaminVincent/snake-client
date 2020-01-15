@@ -1,5 +1,5 @@
 const net = require('net');
-
+const { IP, PORT, NAME } = require('./constants');
 
 
 /*
@@ -9,8 +9,8 @@ const net = require('net');
 
 const connect = function() {
   const conn = net.createConnection({
-    host: '10.0.13.4',
-    port: 50541
+    host: IP,
+    port: PORT
   });
 
   conn.on('connect', () => {
@@ -18,7 +18,7 @@ const connect = function() {
   });
 
   conn.on('connect', () => {
-    conn.write('Name: BEN');
+    conn.write('Name: ' + NAME);
   });
 
 
