@@ -16,13 +16,24 @@ const setupInput = function(conn) {
 }
 
 const handleUserInput = function (key) {
+
+    // exit program
     if (key === '\u0003') {
       
       console.log("*****Process ended*****");
       process.exit(); 
     }
 
-    
+
+    // Messages
+    if (key === "c") {
+      connection.write('Say: WEEOOU');
+    }
+    if (key === "v") {
+      connection.write('Say: GET$$$');
+    }
+
+    // Movement
     if (key === "w") {
       connection.write('Move: up');
     }
