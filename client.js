@@ -20,16 +20,40 @@ const connect = function() {
     conn.write('Name: BEN');
   });
 
-  conn.on('connect', () => {
-    
-    
-  });
+  setupInput();
+  
 
 
   conn.setEncoding('utf8');
 
   return conn;
 }
+
+
+const setupInput = function() {
+
+  const stdin = process.stdin;
+  stdin.setRawMode(true);
+  stdin.setEncoding('utf8');
+
+  stdin.on('data', (key) => {
+    handleUserInput(key);
+  });
+  stdin.resume();
+  
+
+
+  return stdin;
+}
+
+const handleUserInput = function (key) {
+    if (key === '\u0003') {
+      console.log("*****Process ended*****");
+      process.exit(); 
+    }
+}
+
+
 
 
 
