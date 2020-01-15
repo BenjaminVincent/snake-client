@@ -1,6 +1,7 @@
 const net = require('net');
 
 
+
 /*
   Estabilishes connection with the game server
 
@@ -19,9 +20,6 @@ const connect = function() {
   conn.on('connect', () => {
     conn.write('Name: BEN');
   });
-
-  setupInput();
-  
 
 
   conn.setEncoding('utf8');
