@@ -15,10 +15,16 @@ const DIR = {
   MOVE_RIGHT_KEY: 'd' 
 }
 
+const MESSAGES = {
+  c: 'Say: WEEOOU',
+
+};
+
 
 module.exports = {
   IP,
   PORT,
   NAME,
-  DIR
+  DIR,
+  MESSAGES
 }

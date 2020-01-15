@@ -5,7 +5,7 @@
 //         MOVE_DOWN_KEY, 
 //         MOVE_RIGHT_KEY } = require('./constants');
 
-const { DIR } = require('./constants');
+const { DIR, MESSAGES } = require('./constants');
 console.log(DIR.MOVE_DOWN_KEY);
 
 let connection;
@@ -35,13 +35,9 @@ const handleUserInput = function (key) {
 
 
     // Messages
-    if (key === "c") {
-      connection.write('Say: WEEOOU');
+    if (key === 'c') {
+      connection.write(MESSAGES.c);
     }
-    if (key === "v") {
-      connection.write('Say: GET $$$');
-    }
-
     // Movement
     if (key === DIR.MOVE_UP_KEY) {
       connection.write('Move: up');
